@@ -12,18 +12,7 @@ public class ExternalSystem implements ExternalInterface {
     
     @Override
     public void doYourJob() {
-        System.out.println(Utils.version());
-
-        try {
-            URL[] urls = new URL[]{
-                    new URL("C:\\Programmation\\custom-class-loader\\libv2\\build\\libv2-2.jar")
-            };
-            Set<String> packages = new HashSet<>();
-            packages.add("org.ggye.customclassloader.common");
-            new CustomClassLoader(urls, ExternalSystem.class.getClassLoader(), packages);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
+        System.out.println("The external system is using lib version "+Utils.version());
     }
     
 }
